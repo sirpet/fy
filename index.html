@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Fore Yellow - Fórum de Discussões</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .main-container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .message-board {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .message-board textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        .message-board button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        .message-board button:hover {
+            background-color: #45a049;
+        }
+        .fake-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .fake-buttons button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .fake-buttons button:hover {
+            background-color: #e53935;
+        }
+        .footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bem-vindo ao Fore Yellow!</h1>
+        <p>Um fórum de discussões e mensagens sem contas necessárias!</p>
+    </header>
+
+    <div class="main-container">
+        <div class="message-board">
+            <h3>Deixe sua mensagem:</h3>
+            <form>
+                <textarea id="messageInput" placeholder="Escreva sua mensagem aqui..."></textarea><br>
+                <button type="button" onclick="sendMessage()">Enviar Mensagem</button>
+            </form>
+        </div>
+
+        <div id="messagesContainer">
+            <!-- Mensagens serão exibidas aqui -->
+        </div>
+
+        <div class="fake-buttons">
+            <button onclick="alert('Este botão não faz nada!')">Criar Conta</button>
+            <button onclick="alert('Este botão não faz nada!')">Entrar</button>
+            <button onclick="alert('Este botão não faz nada!')">Recuperar Senha</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Fore Yellow - Fórum de Discussões</p>
+    </footer>
+
+    <script type="text/javascript">
+        function sendMessage() {
+            var message = document.getElementById("messageInput").value;
+            if (message.trim() !== "") {
+                var messageContainer = document.createElement("div");
+                messageContainer.style.border = "1px solid #ccc";
+                messageContainer.style.padding = "10px";
+                messageContainer.style.marginBottom = "10px";
+                messageContainer.style.backgroundColor = "#f9f9f9";
+                messageContainer.style.fontSize = "14px";
+                messageContainer.style.color = "#555";
+                messageContainer.innerText = message;
+                
+                document.getElementById("messagesContainer").appendChild(messageContainer);
+                document.getElementById("messageInput").value = ""; // Limpa o campo de texto
+            }
+        }
+    </script>
+
+</body>
+</html>
